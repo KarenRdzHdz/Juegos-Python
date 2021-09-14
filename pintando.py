@@ -11,9 +11,7 @@ Exercises
 """
 
 from turtle import *
-
 from freegames import vector
-
 
 def line(start, end):
     "Draw line from start to end."
@@ -21,7 +19,6 @@ def line(start, end):
     goto(start.x, start.y)
     down()
     goto(end.x, end.y)
-
 
 def square(start, end):
     "Draw square from start to end."
@@ -36,7 +33,6 @@ def square(start, end):
 
     end_fill()
 
-
 def circle(start, end):
     "Draw circle from start to end."
     up()
@@ -46,18 +42,7 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    up()
-    goto(start.x, start.y)
-    down()
-    begin_fill()
-
-    for count in range(2):
-        forward(end.x - start.x)
-        left(90)
-        forward(end.x/2 - start.x/2)
-        left(90)
-    end_fill()
-
+    pass  # TODO
 
 def triangle(start, end):
     "Draw triangle from start to end."
@@ -65,7 +50,6 @@ def triangle(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-    #width parameter
     for i in range(3):
         forward(end.x - start.x)
         width(3-i)
