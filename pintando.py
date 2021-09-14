@@ -8,11 +8,21 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 
-"""
+Integrantes:
+Karen Lizette Rodríguez Hernández - A01197734
+Jorge Eduardo Arias Arias - A01570549
+Hernán Salinas Ibarra - A01570409
 
+13/09/2021
+
+Ejercicios denotados por ***ejercicio realizado***
+
+"""
+# Importamos librerias necesarias
 from turtle import *
 from freegames import vector
 
+# Función para dibujar una linea desde un punto hasta otro
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -20,11 +30,13 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
+# Función para dibujar un cuadrado
 def square(start, end):
     "Draw square from start to end."
     up()
     goto(start.x, start.y)
     down()
+    # Colorea la figura
     begin_fill()
 
     for count in range(4):
@@ -33,22 +45,36 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
+# Función para dibujar un circulo
+def circle(start, end):                 # ***Función de circulo completada***
     "Draw circle from start to end."
     up()
     goto(start.x, start.y)
     down()
     dot(end.x - start.x)
 
-def rectangle(start, end):
+# Función para dibujar un rectangulo
+def rectangle(start, end):                 # ***Función de rectangulo completada***
     "Draw rectangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    # Colorea la figura
+    begin_fill()
+    for count in range(2):
+        forward(end.x - start.x)
+        left(90)
+        forward(end.x/2 - start.x/2)
+        left(90)
+    end_fill()
 
-def triangle(start, end):
+# Función para dibujar triangulo
+def triangle(start, end):                 # ***Función de triangulo completada***
     "Draw triangle from start to end."
     up()
     goto(start.x, start.y)
     down()
+    # Colorea la figura
     begin_fill()
     for i in range(3):
         forward(end.x - start.x)
@@ -80,14 +106,14 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
-onkey(lambda: pensize(pensize()+1), '+')
+onkey(lambda: pensize(pensize()+1), '+')   # ***Ancho de linea editable***
 onkey(lambda: pensize(pensize()-1), '-')
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('purple'), 'P')
+onkey(lambda: color('purple'), 'P')         # ***Color morado agregado***
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
