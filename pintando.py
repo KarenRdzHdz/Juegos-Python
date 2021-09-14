@@ -63,8 +63,6 @@ def triangle(start, end):
         
     end_fill()
 
-
-
 def tap(x, y):
     "Store starting point or draw shape."
     start = state['start']
@@ -88,6 +86,8 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+onkey(lambda: pensize(pensize()+1), '+')
+onkey(lambda: pensize(pensize()-1), '-')
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
